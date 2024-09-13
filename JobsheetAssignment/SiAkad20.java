@@ -6,30 +6,33 @@ public class SiAkad20 {
         Scanner sc = new Scanner(System.in);
 
         String nama, nim;
-        char kelas;
+        String kelas;
         byte absen;
-        double nilaiKuis, nilaiTugas, nilaiUjian, nilaiAkhir;
+        double nilaiKuis, nilaiTugas, nilaiUTS, nilaiUAS, nilaiAkhir;
 
-        System.out.print("Masukan nama: ");
+        System.out.print("Enter name: ");
         nama = sc.nextLine();
-        System.out.print("Masukan NIM: ");
+        System.out.print("Enter NIM: ");
         nim = sc.nextLine();
-        System.out.print("Masukan kelas: ");
-        kelas = sc.nextLine().charAt(0);
-        System.out.print("Masukan nomor absen: ");
+        System.out.print("Enter class: ");
+        kelas = sc.nextLine();
+        System.out.print("Enter absen number: ");
         absen = sc.nextByte();
 
-        System.out.print("Masukan nilai kuis: ");
+        System.out.print("Enter quiz scores: ");
         nilaiKuis = sc.nextDouble();
-        System.out.print("Masukan nilai tugas: ");
+        System.out.print("Enter assignment scores: ");
         nilaiTugas = sc.nextDouble();
-        System.out.print("Masukan nilai ujian: ");
-        nilaiUjian = sc.nextDouble();
+        System.out.print("Enter UTS scores: ");
+        nilaiUTS = sc.nextDouble();
+        System.out.print("Enter UAS scores: ");
+        nilaiUAS = sc.nextDouble();
 
-        nilaiAkhir = (nilaiKuis + nilaiTugas + nilaiUjian) / 3;
+        nilaiAkhir = (nilaiKuis * 0.20) + (nilaiTugas * 0.15) + (nilaiUTS * 0.30) + (nilaiUAS * 0.35);
 
-        System.out.println("Nama: " + nama + " NIM: " + nim);
-        System.out.println("Kelas: " + kelas + " Absen: " + absen);
-        System.out.println("Nilai Akhir: " + nilaiAkhir);
+        System.out.println();
+        System.out.print("Name: " + nama + " | NIM: " + nim);
+        System.out.println(" | Class: " + kelas + " | Absen number: " + absen);
+        System.out.println("Final Scores: " + nilaiAkhir);
     }
 }
